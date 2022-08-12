@@ -1,6 +1,6 @@
 WizardOfLegend
 
-Map Tool - Tile, Decoration object, collision tile, Lava tile
+Map Tool - Tile, Decoration object, Collision tile, Lava tile
 
 Contents 
 
