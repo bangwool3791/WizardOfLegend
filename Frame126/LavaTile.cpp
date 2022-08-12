@@ -1,0 +1,60 @@
+#include "stdafx.h"
+#include "LavaTile.h"
+#include "UserHeader.h"
+#include "HitEffect.h"
+
+CLavaTile::CLavaTile()
+{
+}
+
+CLavaTile::CLavaTile(float _fX, float _fY)
+{
+	m_tInfo.fX = _fX;
+	m_tInfo.fY = _fY;
+	Update_Rect();
+}
+
+CLavaTile::CLavaTile(INFO& _info)
+{
+	m_tInfo.fX = _info.fX;
+	m_tInfo.fY = _info.fY;
+	Update_Rect();
+}
+
+CLavaTile::~CLavaTile()
+{
+}
+
+void CLavaTile::Initialize(void)
+{
+	m_tInfo.fCX = COLLISION_TILECX;
+	m_tInfo.fCY = COLLISION_TILECX;
+	m_pPlayer = m_pObjMgr->Get_Player();
+	Update_Rect();
+}
+int CLavaTile::Update(void)
+{
+	Update_Rect();
+	return OBJ_NOEVENT;
+}
+
+void CLavaTile::Late_Update(void)
+{
+}
+
+void CLavaTile::Render(HDC hDC)
+{
+	if (CKeyMgr::Get_Instance()->Key_Pressing(VK_TAB))
+	{
+		int fX = (int)CScrollMgr::Get_Instance()->Get_ScrollX();
+		int fY = (int)CScrollMgr::Get_Instance()->Get_ScrollY();
+		//Rectangle(hDC, m_tRect.left + fX, m_tRect.top + fY, m_tRect.right + fX, m_tRect.bottom + fY);
+		MoveToEx(hDC, m_tRect.left + fX, m_tRect.top + fY, nullptr);
+		LineTo(hDC, m_tRect.right + fX, m_tRect.bottom + fY);
+	}
+}
+
+void CLavaTile::Release(void)
+{
+
+}

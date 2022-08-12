@@ -1,0 +1,12 @@
+#define MAIN_MENU_BGM 1.f
+#define	SELECT_MENU 0.5f
+
+#define PLAYER_VOLUME 1.f
+#define PLAYER_VOLUME_BACK 1.f
+#define EFFECT_VOLUME 1.f
+#define MONSTER_VOLUME 0.75f
+#define MONSTER_VOLUME_BACK 0.75f
+#define BOSS_VOLUME	1.f
+#define BOSS_VOLUME_BACK 1.f
+#define BGM_VOLUME 1.f
+#define UI_VOLUME 1.f
